@@ -1,12 +1,8 @@
 <template>
   <div class="home">
-    <About />
-    <ContentsItem title="Web Works" />
-    <Loading v-if="entries.length === 0" />
-    <EntryThumbnail
-      :entries="entries"
-    />
+    <h2>検索ページ</h2>
   </div>
+  
 </template>
 <script>
 // @ is an alias to /src
@@ -34,7 +30,5 @@ export default {
       entries: computed(() => store.state.entries),
     }
   }
-  
 }
-
 </script>

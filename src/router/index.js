@@ -1,11 +1,37 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import Spotsearch from '../views/Spotsearch.vue'
 
 const routes = [
   {
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/Spotsearch',
+    name: 'Spotsearch',
+    component: () => import('../views/Spotsearch.vue')
+  },
+  {
+    path: '/Pamphlet',
+    name: 'Pamphlet',
+    component: () => import('../views/Pamphlet.vue')
+  },
+  {
+    path: '/Pamphlet',
+    name: 'Pamphlet',
+    component: () => import('../views/Pamphlet.vue')
+  },
+  {
+    path: '/Aboutus',
+    name: 'Aboutus',
+    component: () => import('../views/Aboutus.vue')
+  },
+  {
+    path: '/Photogallery',
+    name: 'Photogallery',
+    component: () => import('../views/Photogallery.vue')
   },
   {
     path: '/entry/:id',
