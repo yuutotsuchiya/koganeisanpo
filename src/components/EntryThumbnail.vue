@@ -13,6 +13,7 @@
       <h2 class="entry-title"><router-link :to="`/entry/${entry.id}`">{{entry.title}}</router-link></h2>
     </section>
   </div>
+
 </template>
 
 <script>
