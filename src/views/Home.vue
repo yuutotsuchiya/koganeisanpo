@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <About />
-    <ContentsItem title="Web Works" />
+    <ContentsItem title="こんなおすすめスポットを巡りませんか？" />
     <Loading v-if="entries.length === 0" />
     <EntryThumbnail
       :entries="entries"
@@ -34,7 +34,14 @@ export default {
       entries: computed(() => store.state.entries),
     }
   }
-  
+}
+</script>
+<style lang="scss" scoped>
+.home{
+  background-repeat: no-repeat;
+  background-image: url("../assets/background.png");
+  background-size: 100% auto;
+  background-position: bottom 0px right 50%;
 }
 
-</script>
+</style>

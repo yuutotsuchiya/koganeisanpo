@@ -14,9 +14,9 @@
       </figure>
       <div v-html="entry.body" />
     </section>
-    
   </div>
 </template>
+
 
 <script>
 import { onMounted, computed } from 'vue'

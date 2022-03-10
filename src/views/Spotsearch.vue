@@ -1,6 +1,10 @@
 <template>
-  <div class="home">
-    <h2>検索ページ</h2>
+  <div class="spot">
+    <TitleRed />
+    <Loading v-if="entries.length === 0" />
+    <EntryThumbnail
+      :entries="entries"
+    />
   </div>
   
 </template>
@@ -12,13 +16,15 @@ import About from '@/components/About.vue'
 import ContentsItem from '@/components/ContentsItem.vue'
 import EntryThumbnail from '@/components/EntryThumbnail.vue'
 import Loading from '@/icons/Loading.vue'
+import TitleRed from '@/components/Titlered.vue'
 export default {
   name: 'Home',
   components: {
     About,
     EntryThumbnail,
     ContentsItem,
-    Loading
+    Loading,
+    TitleRed
   },
   setup() {
     const store = useStore();
@@ -32,3 +38,12 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+.spot{
+  background-repeat: no-repeat;
+  background-image: url("../assets/background.png");
+  background-size: 100% auto;
+  background-position: bottom 0px right 50%;
+}
+
+</style>

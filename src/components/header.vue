@@ -49,6 +49,7 @@
         <div class="black-bg" id="js-black-bg"></div>
         </div>
     </header>
+
     
 </template>
 <style lang="scss" scoped>
@@ -91,7 +92,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+   @media screen and (max-width:1024px) {
+        display: none;
+    } 
 }
 .header-nav-content{
     margin : 0 20px;
@@ -132,6 +135,9 @@ hamburger(ハンバーガーアイコン)
   border-radius: 10%;
   background-color: #ea6227;
   box-sizing: border-box;
+  @media screen and (max-width:1024px) {
+      position: fixed;
+    }
 }
 
 .hamburger__line {
@@ -182,24 +188,38 @@ sp-nav(ナビ)
 }
 .header-nav-responsive {
         position: fixed;
-        right: -100%; /*ハンバーガーがクリックされる前はWindow右側に隠す*/
-        top: 0;
-        width: 50%; /* 出てくるスライドメニューの幅 */
-        height: 100vh;
+        right: 0;
+        top: -100%;
+        width: 100%;
+        height: 20vh;
+        padding-right: 100px;
         background-color: #fff;
         transition: all 0.5s;
         z-index: 200;
         overflow-y: auto; /* メニューが多くなったらスクロールできるように */
         display: flex;
         flex-wrap: wrap;
+        box-sizing: border-box;
         justify-content: space-between;
+        @media screen and (max-width:700px) {
+        height: 100vh;
+        padding-right: 0px;
+        padding-top: 100px;
+    }
 }
 .header-nav-content-responsive{
-    width: 50%;
+    width: 25%;
+    display: flex;
+    flex-direction:Column;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width:700px) {
+        width: 100%;
+    }
 }
 /*ハンバーガーがクリックされたら右からスライド*/
 .open .header-nav-responsive {
-  right: 0;
+  top: 0;
 }
 
 
@@ -227,9 +247,10 @@ black-bg(ハンバーガーメニュー解除用bg)
   visibility: visible;
 }
 
+
+
 </style>
 <script language="javascript" type="text/javascript">
-
     window.onload = function () {
     var nav = document.getElementById('nav-wrapper');
     var hamburger = document.getElementById('js-hamburger');

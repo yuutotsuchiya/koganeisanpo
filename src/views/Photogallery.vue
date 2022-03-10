@@ -1,34 +1,21 @@
 <template>
-  <div class="home">
-    <h2>aboutus</h2>
+  <div>
+    <swiper :options="swiperOption">
+      <swiper-slide>スライダー１</swiper-slide>
+      <swiper-slide>スライダー２</swiper-slide>
+      <swiper-slide>スライダー３</swiper-slide>
+    </swiper>
   </div>
-  
 </template>
 <script>
-// @ is an alias to /src
-import { onMounted, computed } from 'vue'
-import { useStore } from 'vuex'
-import About from '@/components/About.vue'
-import ContentsItem from '@/components/ContentsItem.vue'
-import EntryThumbnail from '@/components/EntryThumbnail.vue'
-import Loading from '@/icons/Loading.vue'
 export default {
-  name: 'Home',
-  components: {
-    About,
-    EntryThumbnail,
-    ContentsItem,
-    Loading
-  },
-  setup() {
-    const store = useStore();
-    const getEntries = () => store.dispatch('getEntries')
-    onMounted(() => {
-      getEntries()
-    })
+  data() {
     return {
-      entries: computed(() => store.state.entries),
-    }
+      swiperOption: {
+        slidesPerView: 1, // 1枚に表示するスライド数
+        loop: true // 最終ページの次にまた1枚目が表示される
+      }
+    };
   }
-}
+};
 </script>

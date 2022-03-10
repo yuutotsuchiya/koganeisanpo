@@ -14,28 +14,27 @@ export default {
 }
 </script>
 
-
 <style lang="scss" scoped>
 .contents-item {
-  padding: 60px 12px 0px;
-  margin: 0 auto;
-  max-width: 896px;
-  text-align: left;
+  box-sizing: border-box;
+  width: 600px;
+  height: 200px;
+  background-image: url("../assets/title-red.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: 50% 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:0 auto;
+  @media screen and (max-width:700px) {
+        width: 80%;
+    }
 }
 .contents-item-title {
-  margin: 0 auto 40px;
-  padding:0 12px;
-  font-size: 24px;
-  position: relative;
-  color: #333;
-  &:after {
-    content: '';
-    display: block;
-    border-bottom: 1px solid #ff6701;
-    width: 200px;
-  }
-  @media screen and (max-width:896px) {
-    padding:0px;
-  }
+  color: #fff;
+  font-size: 18px;
+  padding:0 10px;
+  font-family: 'Kaisei Opti', serif;
 }
 </style>
