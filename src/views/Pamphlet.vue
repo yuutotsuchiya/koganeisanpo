@@ -1,4 +1,6 @@
 <template>
+<section class="pamphlet">
+  <Titleorange />
   <swiper
     :slidesPerView="1"
     :centeredSlides="false"
@@ -18,39 +20,34 @@
     :modules="modules"
     class="mySwiper"
   >
-    <swiper-slide
-      ><img src="https://cdn.magloft.com/github/swiper/images/page-001.jpg"
-    /></swiper-slide>
-    <swiper-slide
-      ><img src="https://cdn.magloft.com/github/swiper/images/page-002.jpg"
-    /></swiper-slide>
-    <swiper-slide
-      ><img src="https://cdn.magloft.com/github/swiper/images/page-003.jpg"
-    /></swiper-slide>
-    <swiper-slide
-      ><img src="https://cdn.magloft.com/github/swiper/images/page-004.jpg"
-    /></swiper-slide>
-    <swiper-slide
-      ><img src="https://cdn.magloft.com/github/swiper/images/page-005.jpg"
-    /></swiper-slide>
-    <swiper-slide
-      ><img src="https://cdn.magloft.com/github/swiper/images/page-006.jpg"
-    /></swiper-slide>
-    <swiper-slide
-      ><img src="https://cdn.magloft.com/github/swiper/images/page-007.jpg"
-    /></swiper-slide>
-    <swiper-slide
-      ><img src="https://cdn.magloft.com/github/swiper/images/page-008.jpg"
-    /></swiper-slide>
-    <swiper-slide
-      ><img src="https://cdn.magloft.com/github/swiper/images/page-009.jpg"
-    /></swiper-slide>
+    <swiper-slide><img src="../assets/pamplet-1.jpg"/></swiper-slide>
+    <swiper-slide><img src="../assets/pamplet-2.jpg"/></swiper-slide>
+    <swiper-slide><img src="../assets/pamplet-3.jpg"/></swiper-slide>
+    <swiper-slide><img src="../assets/pamplet-4.jpg"/></swiper-slide>
+    <swiper-slide><img src="../assets/pamplet-5.jpg"/></swiper-slide>
+    <swiper-slide><img src="../assets/pamplet-6.jpg"/></swiper-slide>
+    <swiper-slide><img src="../assets/pamplet-7.jpg"/></swiper-slide>
+    <swiper-slide><img src="../assets/pamplet-8.jpg"/></swiper-slide>
+    <swiper-slide><img src="../assets/pamplet-9.jpg"/></swiper-slide>
+    <swiper-slide><img src="../assets/pamplet-10.jpg"/></swiper-slide>
+    <swiper-slide><img src="../assets/pamplet-11.jpg"/></swiper-slide>
+    <swiper-slide><img src="../assets/pamplet-12.jpg"/></swiper-slide>
+    <swiper-slide><img src="../assets/pamplet-13.jpg"/></swiper-slide>
+    <swiper-slide><img src="../assets/pamplet-14.jpg"/></swiper-slide>
+    <swiper-slide><img src="../assets/pamplet-15.jpg"/></swiper-slide>
+    <swiper-slide><img src="../assets/pamplet-16.jpg"/></swiper-slide>
+    <swiper-slide><img src="../assets/pamplet-17.jpg"/></swiper-slide>
+    <swiper-slide><img src="../assets/pamplet-18.jpg"/></swiper-slide>
+    <swiper-slide><img src="../assets/pamplet-19.jpg"/></swiper-slide>
+    <swiper-slide><img src="../assets/pamplet-20.jpg"/></swiper-slide>
   </swiper>
+</section>
+  
 </template>
 <script>
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from "swiper/vue";
-
+import Titleorange from '@/components/Titleorange.vue'
 // Import Swiper styles
 
 import 'swiper/scss';
@@ -62,8 +59,10 @@ import { Keyboard, Navigation, Pagination } from "swiper";
 
 export default {
   components: {
+
     Swiper,
     SwiperSlide,
+    Titleorange,
   },
   setup() {
     return {
@@ -79,6 +78,13 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.pamphlet{
+  background-repeat: no-repeat;
+  background-image: url("../assets/background.png");
+  background-size: 100% auto;
+  background-position: bottom 0px right 50%;
+  padding-bottom: 100px;
+}
 #app { height: 100% }
 html,
 body {
@@ -96,8 +102,11 @@ body {
 }
 
 .swiper {
-  width: 100%;
-  height: 100%;
+  width: 60%;
+  height: 60%;
+  margin:0px auto 0px;
+  padding:50px 60px 80px;
+  
 }
 
 .swiper-slide {
@@ -112,21 +121,54 @@ body {
   display: block;
   width: 100%;
 }
-
-.swiper-pagination-bullet {
-  width: 20px;
-  height: 20px;
-  text-align: center;
-  line-height: 20px;
-  font-size: 12px;
-  color: #000;
-  opacity: 1;
-  background: rgba(0, 0, 0, 0.2);
+.swiper ::v-deep .swiper-button-next{
+    --swiper-navigation-color: #fff;
+    position: absolute;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #ea6227;
 }
-
-.swiper-pagination-bullet-active {
-  color: #fff;
+.swiper ::v-deep .swiper-button-next:after{
+  font-size: 10px;
+  --swiper-navigation-size:10px;
+}
+.swiper ::v-deep .swiper-button-prev{
+    --swiper-navigation-color: #fff;
+    position: absolute;
+    left: 15px;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #ea6227;
+}
+.swiper ::v-deep .swiper-button-prev:after{
+  font-size: 10px;
+  --swiper-navigation-size:10px;
+}
+.swiper ::v-deep .swiper-pagination{
+  position: absolute;
+  bottom: 25px;
+  text-align: center;
+  transition: 300ms opacity;
+  transform: translate3d(0, 0, 0);
+  z-index: 10;
+}
+.swiper ::v-deep .swiper-pagination-bullet {
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  font-size: 10px;
+  color: #ea6227;
+  border: solid 1px #ea6227;
+  opacity: 1;
   background: #fff;
+}
+.swiper ::v-deep .swiper-pagination-bullet-active {
+  color: #fff;
+  background: #ea6227;
 }
 
 @media only screen and (min-width: 769px) {
@@ -141,10 +183,6 @@ body {
   .swiper-slide.swiper-slide-active:first-child {
     transform: translateX(50%);
     z-index: 2;
-  }
-
-  .swiper-slide.swiper-slide-active:first-child img {
-    box-shadow: 0px 32px 80px rgba(0, 0, 0, 0.35);
   }
 
   .swiper-slide:nth-child(2) {
