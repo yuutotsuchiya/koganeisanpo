@@ -3,9 +3,7 @@
     <About />
     <ContentsItem title="こんなおすすめスポットを巡りませんか？" />
     <Loading v-if="entries.length === 0" />
-    <EntryThumbnail
-      :entries="entries"
-    />
+    <Topentry />
   </div>
 </template>
 <script>
@@ -14,13 +12,13 @@ import { onMounted, computed } from 'vue'
 import { useStore } from 'vuex'
 import About from '@/components/About.vue'
 import ContentsItem from '@/components/ContentsItem.vue'
-import EntryThumbnail from '@/components/EntryThumbnail.vue'
+import Topentry from '@/components/Topentry.vue'
 import Loading from '@/icons/Loading.vue'
 export default {
   name: 'Home',
   components: {
     About,
-    EntryThumbnail,
+    Topentry,
     ContentsItem,
     Loading
   },
@@ -42,6 +40,8 @@ export default {
   background-image: url("../assets/background.png");
   background-size: 100% auto;
   background-position: bottom 0px right 50%;
+  position: relative;
+  z-index: 9500;
 }
 
 </style>

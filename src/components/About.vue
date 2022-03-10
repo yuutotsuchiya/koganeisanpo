@@ -67,6 +67,7 @@ body {
 .about{
     padding: 100px 0;
     box-sizing: border-box;
+    position: relative;
 }
 .about-background img{
     width:600px;
@@ -81,7 +82,7 @@ body {
     height:auto;
     position: absolute;
     right: calc(50% - 250px);
-    top: 570px;
+    top: 550px;
     z-index: 10000;
 }
 .about-lead{
@@ -89,7 +90,7 @@ body {
     width:580px;
     margin: 0 auto;
     font-size: 12px;
-    padding-top: 100px;
+    padding-top: 150px;
     line-height: 200%;
     color:#000;
     &::before{

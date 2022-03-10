@@ -20,7 +20,7 @@
             </dl>
             <dl class="footer-nav-content">
                 <dt class="footer-nav-img"><router-link to="/Photogallery"><img src="../assets/photogallery-orange.png" alt=""></router-link></dt>
-                <dd class="footer-nav-title"><router-link to="/Photogallery">こがねいさんぽとは？</router-link></dd>
+                <dd class="footer-nav-title"><router-link to="/Photogallery">フォトギャラリー</router-link></dd>
             </dl>
         </nav>
       </section>
